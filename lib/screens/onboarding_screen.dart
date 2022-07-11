@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:linio_app/screens/main_screen.dart';
 import 'package:linio_app/widgets/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -127,12 +128,35 @@ class _ButtonInicioSesion extends StatelessWidget {
             style:
                 TextStyle(color: Color.fromRGBO(237, 97, 42, 1), fontSize: 20),
           ),
-          onPressed: () async {
-            final SharedPreferences sharedPreferences =
-                await SharedPreferences.getInstance();
-            sharedPreferences.setString('email', 'home');
-            Navigator.pushReplacementNamed(context, 'main');
+          onPressed: () {
+            Navigator.push(context, _createRoute());
           }),
+    );
+  }
+
+  Route _createRoute() {
+    return PageRouteBuilder(
+      transitionDuration: Duration(seconds: 2),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        final curveAnimated =
+            CurvedAnimation(parent: animation, curve: Curves.easeInOut);
+        return SlideTransition(
+          position: Tween<Offset>(begin: Offset(-0.5, 1.0), end: Offset.zero)
+              .animate(curveAnimated),
+          child: child,
+        );
+        // return FadeTransition(
+        //   opacity: Tween(begin: 0.5, end: 1.0).animate(curveAnimated),
+        //   child: child,
+        // );
+        // return ScaleTransition(
+        //   scale: Tween<double>(begin: 0.0, end: 1.0).animate(curveAnimated),
+        //   child: child,
+        // );
+      },
+      pageBuilder: (context, animation, secondaryAnimation) {
+        return MainScreen();
+      },
     );
   }
 }

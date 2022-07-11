@@ -29,18 +29,15 @@ class CyberMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => MenuService(),
-      child: Container(
-        width: double.infinity,
-        height: 110,
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey, width: 1),
-            borderRadius: BorderRadius.circular(40),
-            color: Colors.white),
-        child: _MenuItems(
-          itemsMenu: itemsMenu,
-        ),
+    return Container(
+      width: double.infinity,
+      height: 110,
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey, width: 1),
+          borderRadius: BorderRadius.circular(40),
+          color: Colors.white),
+      child: _MenuItems(
+        itemsMenu: itemsMenu,
       ),
     );
   }
