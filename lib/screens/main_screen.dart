@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
             HomeScreen(),
             ProductScreen(),
             CheckOutScreen(),
-            OnboardignScreen(),
+            ProfileScreen(),
           ],
         ),
         Positioned(

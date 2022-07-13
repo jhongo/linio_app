@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.linio_app">
    <application
-        android:label="linio_app"
+        android:label="Cyber Linio"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
