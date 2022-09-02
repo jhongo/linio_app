@@ -24,14 +24,15 @@ class _MainScreenState extends State<MainScreen> {
           controller: currentPage.pageControllerGet,
           children: [
             HomeScreen(),
-            ProductScreen(),
-            CheckOutScreen(),
-            OnboardignScreen(),
+            const ProductScreen(),
+            const CheckOutScreen(),
+            const ProfileScreen()
           ],
         ),
         Positioned(
-          bottom: 0,
+          bottom: 15,
           child: Container(
+            height: 90,
             width: size.width,
             child: CyberMenu(),
           ),
