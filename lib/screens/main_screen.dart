@@ -24,9 +24,15 @@ class _MainScreenState extends State<MainScreen> {
           controller: currentPage.pageControllerGet,
           children: [
             HomeScreen(),
+<<<<<<< HEAD
             const ProductScreen(),
             const CheckOutScreen(),
             const ProfileScreen()
+=======
+            ProductScreen(),
+            CheckOutScreen(),
+            ProfileScreen(),
+>>>>>>> 2f94cb05c928a7459ac0238f67537c54e03327db
           ],
         ),
         Positioned(
